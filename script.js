@@ -25,64 +25,68 @@ function getHumanChoice(choice) {
     //it does not reach 3, only 0, 1 and 2
 }
 
-function playRound(humanChoice, computerChoice) {
+function playGame(humanChoice, computerChoice) {
 
-    humanChoice = currentHumanChoice;
-    computerChoice = currentComputerChoice;
-    //make game logic
+    
+        humanChoice = currentHumanChoice;
+        computerChoice = currentComputerChoice;
 
-    //HUMAN
 
-    //scissors beats paper
-    if (humanChoice == "scissors" && computerChoice == "paper") {
-        humanScore++;
-        return "You Won!";
-    }
+        function playRound() {
+        //make game logic
 
-    //paper beats rock
-    if (humanChoice == "paper" && computerChoice == "rock") {
-        humanScore++;
-        return "You Won!";
-    }
+        //HUMAN
 
-    //rock beats scissors
-    if (humanChoice == "rock" && computerChoice == "scissors") {
-        humanScore++;
-        return "You Won!";
-    }    
+        //scissors beats paper
+        if (humanChoice == "scissors" && computerChoice == "paper") {
+            humanScore++;
+            return "You Won!";
+        }
 
-        //COMPUTER
+        //paper beats rock
+        if (humanChoice == "paper" && computerChoice == "rock") {
+            humanScore++;
+            return "You Won!";
+        }
 
-    //scissors beats paper
-    if (computerChoice == "scissors" && humanChoice == "paper") {
-        computerScore++;
-        return "You Lost!";
-    }
+        //rock beats scissors
+        if (humanChoice == "rock" && computerChoice == "scissors") {
+            humanScore++;
+            return "You Won!";
+        }    
 
-    //paper beats rock
-    if (computerChoice == "paper" && humanChoice == "rock") {
-        computerScore++;
-        return "You Lost!";
-    }
+            //COMPUTER
 
-    //rock beats scissors
-    if (computerChoice == "rock" && humanChoice == "scissors") {
-        computerScore++;
-        return "You Lost!";
-    } 
+        //scissors beats paper
+        if (computerChoice == "scissors" && humanChoice == "paper") {
+            computerScore++;
+            return "You Lost!";
+        }
 
-        return "It's a Tie";
+        //paper beats rock
+        if (computerChoice == "paper" && humanChoice == "rock") {
+            computerScore++;
+            return "You Lost!";
+        }
 
-}
+        //rock beats scissors
+        if (computerChoice == "rock" && humanChoice == "scissors") {
+            computerScore++;
+            return "You Lost!";
+        } 
 
-function playGame() {
+            return "It's a Tie";
+
+    };
+
+    return playRound();
 
 }
 
 console.log("Hello, Dear User, please enter one of the following below");
 console.log("Rock, Paper or Scissors");
 console.log("You chose: ");
-console.log(getHumanChoice(prompt("Your choice is:", "paper")));
+console.log(getHumanChoice(prompt("Your choice is:")));
 console.log("Computer choice is:");
 console.log(getComputerChoice());
-console.log(playRound(currentComputerChoice, currentHumanChoice));
+console.log(playGame(currentComputerChoice, currentHumanChoice));
