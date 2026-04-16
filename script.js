@@ -75,8 +75,8 @@ function playRound(humanChoice, computerChoice) {
 
 }
 
-function playRound() {
-    
+function playGame() {
+
 }
 
 console.log("Hello, Dear User, please enter one of the following below");
