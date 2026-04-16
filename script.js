@@ -75,6 +75,10 @@ function playRound(humanChoice, computerChoice) {
 
 }
 
+function playRound() {
+    
+}
+
 console.log("Hello, Dear User, please enter one of the following below");
 console.log("Rock, Paper or Scissors");
 console.log("You chose: ");
