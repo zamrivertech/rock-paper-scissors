@@ -94,10 +94,11 @@ function playRound(humanChoice, computerChoice) {
 
 
     playRound(getHumanChoice(), getComputerChoice());
+    /*
     playRound(getHumanChoice(), getComputerChoice());
     playRound(getHumanChoice(), getComputerChoice());
     playRound(getHumanChoice(), getComputerChoice());
-
+    */
    if (humanScore > computerScore) {
     console.log("Your Final Score: " + humanScore + " times, "   
                    + " Congratulations!");
