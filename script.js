@@ -8,6 +8,12 @@ const humanScoreDisplay = document.querySelector("#humanScore");
 
 const computerScoreDisplay = document.querySelector("#computerScore");
 
+const choiceDisplay = document.querySelector('#choice');
+
+const roundResult = document.querySelector("#roundResult");
+
+const winner = document.querySelector("#winner");
+
 function getComputerChoice() {
 
     let random = Math.floor(Math.random() * 3) + 1;
@@ -33,13 +39,6 @@ function getHumanChoice() {
                 playRound(getHumanChoice(), getComputerChoice());
                 playRound(getHumanChoice(), getComputerChoice());
                 */
-            if (humanScore > computerScore) {
-                console.log("Your Final Score: " + humanScore + " times, "   
-                            + " Congratulations!");
-            } else {
-                console.log("Computer Final Score: " + computerScore + " times, "   
-                            + " Better Luck Next Time!");
-            }
 
         });
     });
@@ -47,81 +46,93 @@ function getHumanChoice() {
 
 }
 
-
     let humanScore = 0;
     let computerScore = 0;
 
 
-
 function playRound(humanChoice, computerChoice) {
 
-    computerScoreDisplay.textContent = computerScore;
+    winner.textContent = "";
 
+    choiceDisplay.textContent = "You: " + humanChoice +
+                                ", Computer: " + computerChoice;
+
+    if (humanChoice === "rock" && 
+        computerChoice === "scissors") {
+
+        humanScore++;
+            computerScoreDisplay.textContent = computerScore;
     humanScoreDisplay.textContent = humanScore;
 
-    console.log("You: " + humanChoice + 
-            ", Computer: " + computerChoice);
-
-    if (humanChoice == "rock" && 
-        computerChoice == "scissors") {
+        roundResult.textContent = "You Win! Rock Smashes Scissors.";
+        
+    } else if (humanChoice === "scissors" &&
+               computerChoice === "paper") {
 
         humanScore++;
+            computerScoreDisplay.textContent = computerScore;
+    humanScoreDisplay.textContent = humanScore;
 
-        console.log("Your Score: " + humanScore + 
-           ", Computer Score: " + computerScore + 
-           ". You Win! Rock Smashes Scissors.");
-        
-    } else if (humanChoice == "scissors" &&
-               computerChoice == "paper") {
+        roundResult.textContent = "You Win! Scissors Cuts Paper.";
 
-        humanScore++;
-
-        console.log("Your Score: " + humanScore + 
-           ", Computer Score: " + computerScore + 
-           ". You Win! Scissors Cuts Paper.");
-
-    } else if (humanChoice == "paper" && 
-              computerChoice == "rock") {
+    } else if (humanChoice === "paper" && 
+              computerChoice === "rock") {
 
         humanScore++;
+            computerScoreDisplay.textContent = computerScore;
+    humanScoreDisplay.textContent = humanScore;
 
-        console.log("Your Score: " + humanScore + 
-           ", Computer Score: " + computerScore +
-           ". You Win! Paper Wraps Rock.");
+        roundResult.textContent = "You Win! Paper Wraps Rock.";
         
-    }     if (computerChoice == "rock" && 
-              humanChoice == "scissors") {
+    } else  if (computerChoice === "rock" && 
+              humanChoice === "scissors") {
 
         computerScore++;
+            computerScoreDisplay.textContent = computerScore;
+    humanScoreDisplay.textContent = humanScore;
 
-        console.log("Your Score: " + humanScore + 
-           ", Computer Score: " + computerScore + 
-           ". You Lose! Rock Smashes Scissors.");
+        roundResult.textContent = "You Lose! Rock Smashes Scissors.";
         
-    } else if (computerChoice == "scissors" && 
-               humanChoice == "paper") {
+    } else if (computerChoice === "scissors" && 
+               humanChoice === "paper") {
 
         computerScore++;
+            computerScoreDisplay.textContent = computerScore;
+    humanScoreDisplay.textContent = humanScore;
 
-        console.log("Your Score: " + humanScore +
-           ", Computer Score: " + computerScore +
-           ". You Lose! Scissors Cuts Paper.");
+        roundResult.textContent = "You Lose! Scissors Cuts Paper.";
 
-    } else if (computerChoice == "paper" && 
-               humanChoice == "rock") {
+    } else if (computerChoice === "paper" && 
+               humanChoice === "rock") {
 
         computerScore++;
+            computerScoreDisplay.textContent = computerScore;
+    humanScoreDisplay.textContent = humanScore;
 
-        console.log("Your Score: " + humanScore + 
-           ", Computer Score: " + computerScore +
-           ". You Lose! Paper Wraps Rock.");
+        roundResult.textContent = " You Lose! Paper Wraps Rock.";
         
-    } else { 
+    } else if (humanChoice === computerChoice) { 
+            computerScoreDisplay.textContent = computerScore;
+    humanScoreDisplay.textContent = humanScore;
     
-    console.log("Your Score: " + humanScore + 
-       ", Computer Score: " + computerScore + 
-       ". It's a Tie!");
+                roundResult.textContent = "It's a Tie!";
     }   
+
+    if (humanScore === 5 ) {
+        //You Win
+
+        winner.textContent = "You Win!";
+
+    }
+    
+    if (computerScore === 5) {
+        //You Lose
+        winner.textContent = "You Lose!";    
+    }
+
+    if (computerScore > 5 || humanScore > 5) {
+        location.reload();
+    }
 
 
 }
