@@ -4,6 +4,10 @@ const buttons = document.querySelectorAll("button");
 
 const results = document.querySelector("#results");
 
+const humanScoreDisplay = document.querySelector("#humanScore");
+
+const computerScoreDisplay = document.querySelector("#computerScore");
+
 function getComputerChoice() {
 
     let random = Math.floor(Math.random() * 3) + 1;
@@ -50,6 +54,10 @@ function getHumanChoice() {
 
 
 function playRound(humanChoice, computerChoice) {
+
+    computerScoreDisplay.textContent = computerScore;
+
+    humanScoreDisplay.textContent = humanScore;
 
     console.log("You: " + humanChoice + 
             ", Computer: " + computerChoice);
