@@ -22,14 +22,26 @@ function getHumanChoice() {
     buttons.forEach ((button) => {
         button.addEventListener('click', () => {
             choice = button.id;
+
+                playRound(choice, getComputerChoice());
+                /*
+                playRound(getHumanChoice(), getComputerChoice());
+                playRound(getHumanChoice(), getComputerChoice());
+                playRound(getHumanChoice(), getComputerChoice());
+                */
+            if (humanScore > computerScore) {
+                console.log("Your Final Score: " + humanScore + " times, "   
+                            + " Congratulations!");
+            } else {
+                console.log("Computer Final Score: " + computerScore + " times, "   
+                            + " Better Luck Next Time!");
+            }
+
         });
     });
     
-    return choice;
 
 }
-
-function playGame() {
 
 
     let humanScore = 0;
@@ -107,23 +119,11 @@ function playRound(humanChoice, computerChoice) {
 }
  
 
-    playRound(getHumanChoice(), getComputerChoice());
-    /*
-    playRound(getHumanChoice(), getComputerChoice());
-    playRound(getHumanChoice(), getComputerChoice());
-    playRound(getHumanChoice(), getComputerChoice());
-    */
-   if (humanScore > computerScore) {
-    console.log("Your Final Score: " + humanScore + " times, "   
-                   + " Congratulations!");
-   } else {
-    console.log("Computer Final Score: " + computerScore + " times, "   
-                   + " Better Luck Next Time!");
-   }
+
 
   
 
-}
+
 
 
 console.log(getHumanChoice());
