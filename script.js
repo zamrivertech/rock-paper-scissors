@@ -17,18 +17,25 @@ function getComputerChoice() {
 
 function getHumanChoice() {
 
+    let choice = null;
+
     buttons.forEach ((button) => {
         button.addEventListener('click', () => {
-            //console.log(button.id)
-            return button.id;
-        })
-    })
+            choice = button.id;
+        });
+    });
+    
+    return choice;
+
 }
 
 function playGame() {
 
+
     let humanScore = 0;
     let computerScore = 0;
+
+
 
 function playRound(humanChoice, computerChoice) {
 
@@ -98,8 +105,8 @@ function playRound(humanChoice, computerChoice) {
 
 
 }
+ 
 
-  
     playRound(getHumanChoice(), getComputerChoice());
     /*
     playRound(getHumanChoice(), getComputerChoice());
@@ -114,9 +121,10 @@ function playRound(humanChoice, computerChoice) {
                    + " Better Luck Next Time!");
    }
 
+  
+
 }
 
-//setTimeout( 3000);
-playGame();
 
+console.log(getHumanChoice());
 
