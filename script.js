@@ -1,5 +1,9 @@
 //console.log("Hello, World!")
 
+const buttons = document.querySelectorAll("button");
+
+const results = document.querySelector("#results");
+
 function getComputerChoice() {
 
     let random = Math.floor(Math.random() * 3) + 1;
@@ -13,9 +17,12 @@ function getComputerChoice() {
 
 function getHumanChoice() {
 
-    let choice = prompt("Rock, Paper Or Scissors", "sCisSoRs");
-
-    return choice.toLowerCase();
+    buttons.forEach ((button) => {
+        button.addEventListener('click', () => {
+            //console.log(button.id)
+            return button.id;
+        })
+    })
 }
 
 function playGame() {
@@ -92,7 +99,7 @@ function playRound(humanChoice, computerChoice) {
 
 }
 
-
+  
     playRound(getHumanChoice(), getComputerChoice());
     /*
     playRound(getHumanChoice(), getComputerChoice());
@@ -109,6 +116,7 @@ function playRound(humanChoice, computerChoice) {
 
 }
 
+//setTimeout( 3000);
 playGame();
 
 
