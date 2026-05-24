@@ -11,20 +11,38 @@
         <h1>Rock Paper Scissors</h1>
     </div>
 
-    <div id="buttonsChoice">
-        <button id="rock">Rock ✊</button>
-        <button id="paper">Paper ✋</button>
-        <button id="scissors">Scissors ✌️</button>
-    </div>    
+    <div class="game">
 
-    <div id="results">
-        <p>Your Score: <span id="humanScore"></span></p>
-        <p>Your Computer Score: <span id="computerScore"></span></p>    
-        <p id="choice"></p>    
-        <p id="roundResult"></p>
-        <p id="winner"></p>
-        
+        <div class="text">
+            <h2>Choose your weapon</h2>
+            <h3>First to score 5 points wins the game</h3>
+        </div>
+
+        <div id="results">
+            <div class="player_choice_display">  
+            <p>You: <span id="humanScore"></span></p>
+            </div>
+            <div class="computer_choice_display">
+            <p>Computer: <span id="computerScore"></span></p>    
+            </div>    
+        </div>
+
+            <p id="choice"></p>    
+            <p id="roundResult"></p>
+            <p id="winner"></p>
+
+        <div id="buttonsChoice">
+            <button id="rock">Rock ✊</button>
+            <button id="paper">Paper ✋</button>
+            <button id="scissors">Scissors ✌️</button>
+        </div>    
+
+
+
+
     </div>
+
+
 
 <script src="./script.js"></script>    
 </body>
