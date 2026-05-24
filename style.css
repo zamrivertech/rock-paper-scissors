@@ -4,6 +4,9 @@
     --bg-title: rgb(4, 70, 4);
     --color-title: rgb(206, 206, 7);
     --bg-body: rgb(0, 114, 0);
+    --text: rgb(198, 234, 255);
+    --text2: rgba(255, 251, 0, 0.836);    
+    --color-title-faded: rgba(206, 206, 7, 0.39);    
 }
 
 * {
@@ -32,4 +35,42 @@ body {
 
 .title h1 {
     color: var(--color-title);
+}
+
+#results {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.choice .emoji {
+    font-size: 8rem;
+    text-align: center;
+}
+
+.choice p {
+    text-align: center;
+    color: var(--text);
+    font-size: 2rem;
+}
+
+.text {
+    text-align: center;
+    margin: 32px 0;
+    color: var(--text2);
+}
+
+#buttonsChoice {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: 22px;
+}
+
+#buttonsChoice button {
+    font-size: 4rem;
+    background-color: var(--color-title-faded);
+    border: none;
+    border-radius: 22px;
+
 }
