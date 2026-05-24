@@ -14,28 +14,28 @@
     <div class="game">
 
         <div class="text">
-            <h2>Choose your weapon</h2>
-            <h3>First to score 5 points wins the game</h3>
+            <h2 id="round_result">Choose your weapon</h2>
+
         </div>
 
         <div id="results">
-            <div class="choice"><span class="emoji">❓</span>  
+            <div class="choice"><span class="emoji" id="human_choice_display">❓</span>  
             <p>You: <span id="humanScore">0</span></p>
             </div>
-            <div class="choice"><span class="emoji">❓</span>
+            <div class="choice"><span class="emoji" id="computer_choice_display">❓</span>
             <p>Computer: <span id="computerScore">0</span></p>    
             </div>    
         </div>
 
-            <p id="choice"></p>    
-            <p id="roundResult"></p>
-            <p id="winner"></p>
+    
 
         <div id="buttonsChoice">
-            <button id="rock">✊</button>
-            <button id="paper">✋</button>
-            <button id="scissors">✌️</button>
-        </div>    
+            <button id="rock" value="✊">✊</button>
+            <button id="paper" value="✋">✋</button>
+            <button id="scissors" value="✌️">✌️</button>
+        </div>   
+        
+        <h3>First to score 5 points wins the game</h3>
 
     </div>
 

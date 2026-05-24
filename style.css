@@ -4,10 +4,10 @@
     --bg-title: rgb(4, 70, 4);
     --color-title: rgb(206, 206, 7);
     --bg-body: rgb(0, 114, 0);
-    --text: rgb(198, 234, 255);
     --text2: rgba(255, 251, 0, 0.836);    
-    --color-title-faded: rgba(206, 206, 7, 0.39);    
-}
+    --color-title-faded: rgba(206, 206, 7, 0.39);   
+     --text: rgb(238, 226, 226); 
+}  
 
 * {
     margin: 0;
@@ -43,8 +43,13 @@ body {
 
 }
 
+.choice {
+    display: flex;
+    flex-direction: column;
+}
+
 .choice .emoji {
-    font-size: 8rem;
+    font-size: 5.35rem;
     text-align: center;
 }
 
@@ -62,15 +67,21 @@ body {
 
 #buttonsChoice {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     width: 100%;
-    margin: 22px;
+    gap: 16px;
+    margin: 22px 0;
 }
 
 #buttonsChoice button {
-    font-size: 4rem;
+    font-size: 3.75rem;
     background-color: var(--color-title-faded);
     border: none;
     border-radius: 22px;
+    padding: 8px;
+}
 
+h3 {
+    color: var(--text);
+    text-align: center;
 }

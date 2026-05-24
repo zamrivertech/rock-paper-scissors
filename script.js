@@ -8,9 +8,11 @@ const humanScoreDisplay = document.querySelector("#humanScore");
 
 const computerScoreDisplay = document.querySelector("#computerScore");
 
-const choiceDisplay = document.querySelector('#choice');
+const humanChoiceDisplay = document.querySelector('#human_choice_display');
 
-const roundResult = document.querySelector("#roundResult");
+const computerChoiceDisplay = document.querySelector('#computer_choice_display');
+
+const roundResult = document.querySelector("#round_result");
 
 const winner = document.querySelector("#winner");
 
@@ -18,9 +20,9 @@ function getComputerChoice() {
 
     let random = Math.floor(Math.random() * 3) + 1;
 
-    if (random == 1) { return "rock";} 
-    else if (random == 2) { return "paper"; } 
-    else if (random == 3) { return "scissors";}
+    if (random == 1) { return "✊";} 
+    else if (random == 2) { return "✋"; } 
+    else if (random == 3) { return "✌️";}
 
     return;
 }
@@ -31,7 +33,7 @@ function getHumanChoice() {
 
     buttons.forEach ((button) => {
         button.addEventListener('click', () => {
-            choice = button.id;
+            choice = button.value;
 
                 playRound(choice, getComputerChoice());
                 /*
@@ -52,64 +54,64 @@ function getHumanChoice() {
 
 function playRound(humanChoice, computerChoice) {
 
-    winner.textContent = "";
+    //winner.textContent = "";
 
-    choiceDisplay.textContent = "You: " + humanChoice +
-                                ", Computer: " + computerChoice;
+    humanChoiceDisplay.textContent = humanChoice;
+    computerChoiceDisplay.textContent = computerChoice;
 
-    if (humanChoice === "rock" && 
-        computerChoice === "scissors") {
-
-        humanScore++;
-            computerScoreDisplay.textContent = computerScore;
-    humanScoreDisplay.textContent = humanScore;
-
-        roundResult.textContent = "You Win! Rock Smashes Scissors.";
-        
-    } else if (humanChoice === "scissors" &&
-               computerChoice === "paper") {
+    if (humanChoice === "✊" && 
+        computerChoice === "✌️") {
 
         humanScore++;
             computerScoreDisplay.textContent = computerScore;
     humanScoreDisplay.textContent = humanScore;
 
-        roundResult.textContent = "You Win! Scissors Cuts Paper.";
-
-    } else if (humanChoice === "paper" && 
-              computerChoice === "rock") {
+        roundResult.textContent = "Rock Smashes Scissors.";
+        
+    } else if (humanChoice === "✌️" &&
+               computerChoice === "✋") {
 
         humanScore++;
             computerScoreDisplay.textContent = computerScore;
     humanScoreDisplay.textContent = humanScore;
 
-        roundResult.textContent = "You Win! Paper Wraps Rock.";
+        roundResult.textContent = "Scissors Cuts Paper.";
+
+    } else if (humanChoice === "✋" && 
+              computerChoice === "✊") {
+
+        humanScore++;
+            computerScoreDisplay.textContent = computerScore;
+    humanScoreDisplay.textContent = humanScore;
+
+        roundResult.textContent = "Paper Wraps Rock.";
         
-    } else  if (computerChoice === "rock" && 
-              humanChoice === "scissors") {
+    } else  if (computerChoice === "✊" && 
+              humanChoice === "✌️") {
 
         computerScore++;
             computerScoreDisplay.textContent = computerScore;
     humanScoreDisplay.textContent = humanScore;
 
-        roundResult.textContent = "You Lose! Rock Smashes Scissors.";
+        roundResult.textContent = "Scissors Smashed By Rock.";
         
-    } else if (computerChoice === "scissors" && 
-               humanChoice === "paper") {
+    } else if (computerChoice === "✌️" && 
+               humanChoice === "✋") {
 
         computerScore++;
             computerScoreDisplay.textContent = computerScore;
     humanScoreDisplay.textContent = humanScore;
 
-        roundResult.textContent = "You Lose! Scissors Cuts Paper.";
+        roundResult.textContent = "Paper Cut By Scissors.";
 
-    } else if (computerChoice === "paper" && 
-               humanChoice === "rock") {
+    } else if (computerChoice === "✋" && 
+               humanChoice === "✊") {
 
         computerScore++;
             computerScoreDisplay.textContent = computerScore;
     humanScoreDisplay.textContent = humanScore;
 
-        roundResult.textContent = " You Lose! Paper Wraps Rock.";
+        roundResult.textContent = "Rock Wrapped by Paper.";
         
     } else if (humanChoice === computerChoice) { 
             computerScoreDisplay.textContent = computerScore;
@@ -121,29 +123,19 @@ function playRound(humanChoice, computerChoice) {
     if (humanScore === 5 ) {
         //You Win
 
-        winner.textContent = "You Win!";
+        alert("You Win!");
+        location.reload();
 
     }
     
     if (computerScore === 5) {
         //You Lose
-        winner.textContent = "You Lose!";    
-    }
-
-    if (computerScore > 5 || humanScore > 5) {
-        location.reload();
+        alert("You Lose!"); 
+        location.reload();   
     }
 
 
 }
- 
 
-
-
-  
-
-
-
-
-console.log(getHumanChoice());
+//console.log(getHumanChoice());
 
