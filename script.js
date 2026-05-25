@@ -137,5 +137,5 @@ function playRound(humanChoice, computerChoice) {
 
 }
 
-//console.log(getHumanChoice());
+getHumanChoice();
 
